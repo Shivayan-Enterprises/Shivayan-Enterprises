@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -16,7 +15,6 @@ const Index = () => {
     cta: useRef<HTMLDivElement>(null),
   };
 
-  // Animate sections on scroll
   useEffect(() => {
     const observerOptions = {
       threshold: 0.15,
@@ -32,7 +30,6 @@ const Index = () => {
       });
     }, observerOptions);
 
-    // Observe all section refs
     Object.values(sectionRefs).forEach((ref) => {
       if (ref.current) {
         observer.observe(ref.current);
@@ -51,46 +48,31 @@ const Index = () => {
   return (
     <div className="overflow-x-hidden">
       <HeroSection ref={sectionRefs.hero} />
-      
       {/* Featured Clients */}
       <div className="py-12 md:py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-magic-light/60 text-sm uppercase tracking-wider mb-6">
-            Trusted by innovative companies
+            Goverment Registered Since 2025
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {['Marvel', 'Warner Bros', 'Disney', 'Universal Studios', 'Netflix'].map((client, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ opacity: 1, scale: 1.05 }}
-                className="text-white/60 font-bold text-lg md:text-xl"
-              >
-                {client}
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>
       
-      {/* Services Section */}
       <ServicesSection ref={sectionRefs.services} />
       
       {/* Why Choose Us */}
       <section 
         ref={sectionRefs.why}
-        className="py-20 md:py-28 px-6 opacity-0 transition-opacity duration-700 relative overflow-hidden"
+        className="py-20 md:py-28 px-6 transition-opacity duration-700 relative overflow-hidden"
       >
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-magic-accent/5 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 md:mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
               className="inline-block px-3 py-1 rounded-full bg-magic-gold/10 mb-3"
             >
               <span className="text-magic-gold text-sm font-medium flex items-center">
@@ -100,18 +82,16 @@ const Index = () => {
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
             >
               Why Choose <span className="text-gradient">MagicDev</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true }}
               className="text-magic-light/80 text-lg max-w-2xl mx-auto"
             >
               We combine magical creativity with technical excellence to deliver web solutions that exceed expectations.
@@ -154,9 +134,8 @@ const Index = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 group"
               >
@@ -180,9 +159,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
           >
             <div className="inline-block px-3 py-1 rounded-full bg-magic-accent/10 mb-3">
               <span className="text-magic-accent text-sm font-medium flex items-center">
@@ -223,9 +201,8 @@ const Index = () => {
           
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
             className="h-[400px] md:h-[500px] rounded-xl overflow-hidden bg-magic-dark/50 backdrop-blur-sm border border-white/10"
           >
             <ThreeScene />
@@ -236,7 +213,7 @@ const Index = () => {
       {/* CTA Section */}
       <section 
         ref={sectionRefs.cta}
-        className="py-20 md:py-32 px-6 opacity-0 transition-opacity duration-700 relative overflow-hidden"
+        className="py-20 md:py-32 px-6 transition-opacity duration-700 relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-magic-dark opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-br from-magic-accent/20 via-transparent to-magic-gold/10" />
@@ -244,9 +221,8 @@ const Index = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
             className="inline-block px-3 py-1 rounded-full bg-magic-gold/10 mb-3"
           >
             <span className="text-magic-gold text-sm font-medium flex items-center justify-center">
@@ -257,9 +233,8 @@ const Index = () => {
           
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
           >
             Let's Create <span className="text-gradient-gold">Magic</span> Together
@@ -267,9 +242,8 @@ const Index = () => {
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
             className="text-magic-light/90 text-lg md:text-xl max-w-3xl mx-auto mb-10"
           >
             Transform your ideas into extraordinary digital experiences with our magical web development solutions.
@@ -277,9 +251,8 @@ const Index = () => {
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link to="/contact">

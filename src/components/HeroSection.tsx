@@ -113,8 +113,8 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
                 ))}
               </div>
               <div className="ml-4">
-                <div className="text-white font-medium">Trusted by 200+ clients</div>
-                <div className="text-magic-light/60 text-sm">5.0 ★★★★★ (120+ reviews)</div>
+                <div className="text-white font-medium">Trusted by 10+ clients</div>
+                <div className="text-magic-light/60 text-sm">5.0 ★★★★★ (10+ reviews)</div>
               </div>
             </div>
           </motion.div>
